@@ -34,12 +34,58 @@ function createCard(car) {
   return card;
 }
 
+const colorFilter = document.querySelector("#colorF");
+colorFilter.innerHTML += `<option value=""></option>`;
+let color = [];
+let i = 0;
+const makeFilter = document.querySelector("#makeF");
+makeFilter.innerHTML += `<option value=""></option>`;
+const mileFilter = document.querySelector("#milesF");
+let maxMiles = 0;
+let minMiles = usedCars[0].mileage;
+
 usedCars.forEach((element) => {
   let index = usedCars.indexOf(element);
+  makeFilter.innerHTML += `<option value=${element.make}>${element.make}</option>`;
+  if (!color.includes(element.color)) {
+    color[i] = element.color;
+    i++;
+  }
+  if (element.mileage > maxMiles) {
+    maxMiles = element.mileage;
+  }
+  if (element.mileage < minMiles) {
+    minMiles = element.mileage;
+  }
   parent.appendChild(createCard(index));
 });
 
+mileFilter.min = minMiles;
+mileFilter.max = maxMiles;
+mileFilter.value = maxMiles;
+
+color.forEach((element) => {
+  colorFilter.innerHTML += `<option value=${element}>${element}</option>`;
+});
+
+const submit = document.querySelector("#submit");
 submit.addEventListener("click", (e) => {
+  let array = usedCars.filter(filterFunc);
+  parent.innerHTML = "";
+  array.forEach((element) => {
+    let index = usedCars.indexOf(element);
+    parent.appendChild(createCard(index));
+  });
+});
+
+
+//update css for form
+//update css for nav bar
+//update css for cards
+//make pretty
+//comment
+
+function filterFunc(jason) {
   let yearMin = document.querySelector("#yearMin").value;
   let yearMax = document.querySelector("#yearMax").value;
   let makeF = document.querySelector("#makeF").value;
@@ -47,12 +93,30 @@ submit.addEventListener("click", (e) => {
   let priceMin = document.querySelector("#priceMin").value;
   let priceMax = document.querySelector("#priceMax").value;
   let colorF = document.querySelector("#colorF").value;
-  let submit = document.querySelector("#submit").value;
-});
 
-//Make filter functions for each set (one big one with optional params?)
-//update css for form
-//update css for nav bar
-//update css for cards
-//make pretty
-//comment
+  if (parseInt(jason.year) < parseInt(yearMin) && yearMin != "") {
+    return;
+  }
+
+  if (parseInt(jason.year) > parseInt(yearMax) && yearMax != "") {
+    return;
+  }
+  if (jason.make != makeF && makeF != "") {
+    return;
+  }
+  if (jason.mileage > milesF) {
+    return;
+  }
+  if (parseInt(jason.price) < parseInt(priceMin) && priceMin != "") {
+    return;
+  }
+
+  if (parseInt(jason.price) > parseInt(priceMax) && priceMax != "") {
+    return;
+  }
+  if (jason.color != colorF && colorF != "") {
+    return;
+  }
+
+  return jason;
+}
