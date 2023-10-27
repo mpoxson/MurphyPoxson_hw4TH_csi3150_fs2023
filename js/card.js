@@ -49,3 +49,10 @@ submit.addEventListener("click", (e) => {
   let colorF = document.querySelector("#colorF").value;
   let submit = document.querySelector("#submit").value;
 });
+
+//Make filter functions for each set (one big one with optional params?)
+//update css for form
+//update css for nav bar
+//update css for cards
+//make pretty
+//comment
