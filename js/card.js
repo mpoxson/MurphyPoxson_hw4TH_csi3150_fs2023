@@ -17,9 +17,14 @@ function createCard(car) {
   card.append(pic);
 
   const miles = document.createElement("div");
-  miles.className = "miles";
-  miles.innerHTML += `<p>Mileage: ${usedCars[car].gasMileage}</p>`;
+  miles.className = "Miles";
+  miles.innerHTML += `<h2>Miles: ${usedCars[car].mileage}</h2>`;
   card.append(miles);
+
+  const mpg = document.createElement("div");
+  mpg.className = "MPG";
+  mpg.innerHTML += `<p>Mileage: ${usedCars[car].gasMileage}</p>`;
+  card.append(mpg);
 
   const pc = document.createElement("div");
   pc.className = "pc";
@@ -32,4 +37,15 @@ function createCard(car) {
 usedCars.forEach((element) => {
   let index = usedCars.indexOf(element);
   parent.appendChild(createCard(index));
+});
+
+submit.addEventListener("click", (e) => {
+  let yearMin = document.querySelector("#yearMin").value;
+  let yearMax = document.querySelector("#yearMax").value;
+  let makeF = document.querySelector("#makeF").value;
+  let milesF = document.querySelector("#milesF").value;
+  let priceMin = document.querySelector("#priceMin").value;
+  let priceMax = document.querySelector("#priceMax").value;
+  let colorF = document.querySelector("#colorF").value;
+  let submit = document.querySelector("#submit").value;
 });

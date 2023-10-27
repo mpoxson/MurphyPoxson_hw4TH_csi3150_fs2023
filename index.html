@@ -8,7 +8,18 @@
     <script type="module" src="./js/card.js" defer></script>
   </head>
   <body>
-    <div class="cardHolder"></div>
-    
+    <main class="cardHolder"></main>
+    <aside>
+      <form class="filters">
+        <input type="text" name="yearMin" id="yearMin" />
+        <input type="text" name="yearMax" id="yearMax" />
+        <select name="makeF" id="makeF" min="0" max="10"></select>
+        <input type="range" name="milesF" id="milesF" />
+        <input type="text" name="priceMin" id="priceMin" />
+        <input type="text" name="priceMax" id="priceMax" />
+        <select name="colorF" id="colorF"></select>
+      </form>
+      <input type="submit" value="submit" id="submit" />
+    </aside>
   </body>
 </html>
