@@ -110,6 +110,7 @@ const usedCars = [
     gasMileage: "19 mpg city, 27 mpg highway",
   },
   {
+    // 
     year: 2018,
     make: "Jaguar",
     model: "F-PACE",
