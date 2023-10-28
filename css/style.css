@@ -36,10 +36,10 @@ nav h1 {
 aside {
   padding-top: 5px;
   width: 25%;
-  height: 100vh;
   background-color: rgb(253, 223, 184);
   padding-left: 10px;
   padding-right: 10px;
+  min-height: 100vh;
 }
 
 .filterHead {
@@ -78,5 +78,8 @@ aside {
   float: left;
   margin: 5px;
   width: 32%;
-  height: 66%;
+  height: 325px;
+  text-align: center;
+  align-content: center;
+  border: 1px solid black;
 }
