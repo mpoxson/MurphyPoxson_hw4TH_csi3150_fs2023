@@ -64,6 +64,12 @@ mileFilter.min = minMiles;
 mileFilter.max = maxMiles;
 mileFilter.value = maxMiles;
 
+let label = document.querySelector("#mileLabel");
+label.textContent = `Mileage: ${maxMiles}`;
+mileFilter.addEventListener("change", (e) => {
+  label.textContent = `Mileage: ${mileFilter.value}`;
+});
+
 color.forEach((element) => {
   colorFilter.innerHTML += `<option value=${element}>${element}</option>`;
 });
@@ -72,18 +78,16 @@ const submit = document.querySelector("#submit");
 submit.addEventListener("click", (e) => {
   let array = usedCars.filter(filterFunc);
   parent.innerHTML = "";
+
+  if (array.length == 0) {
+    parent.innerHTML = `<h1 class="sorry">Sorry! There are no cars found!</h1>`;
+  }
+
   array.forEach((element) => {
     let index = usedCars.indexOf(element);
     parent.appendChild(createCard(index));
   });
 });
-
-
-//update css for form
-//update css for nav bar
-//update css for cards
-//make pretty
-//comment
 
 function filterFunc(jason) {
   let yearMin = document.querySelector("#yearMin").value;

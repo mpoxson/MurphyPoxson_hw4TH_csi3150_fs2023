@@ -7,28 +7,76 @@
 body {
   width: 100vw;
   height: 100vh;
+  background-color: burlywood;
+  overflow-x: hidden;
+}
+
+nav {
+  font-family: serif;
+  background-color: rgb(169, 123, 63);
+  width: 100vw;
+  height: 5vh;
+  align-items: center;
+  justify-content: center;
+}
+
+nav h1 {
+  margin: auto;
+  padding-top: 1vh;
+  width: fit-content;
+  height: fit-content;
+}
+
+.fullBody {
+  width: 100vw;
+  height: fit-content;
+  display: flex;
+}
+
+aside {
+  padding-top: 5px;
+  width: 25%;
+  height: 100vh;
+  background-color: rgb(253, 223, 184);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.filterHead {
+  text-align: center;
+  width: 100%;
+}
+
+.filters {
+  margin-top: 5px;
+  height: fit-content;
+}
+
+.filters * {
+  width: 100%;
+}
+
+.filterHolder {
+  height: fit-content;
+}
+
+#submit {
+  margin-top: 5px;
 }
 
 .cardHolder {
-  border: 1px solid blue;
-  width: 100%;
+  width: 75%;
+  height: fit-content;
   overflow: hidden;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
 }
 
 .card * {
-  max-width: 15vw;
-  max-height: 15vh;
+  max-width: 100%;
 }
 
 .card {
   float: left;
-  border: 1px solid red;
   margin: 5px;
-  width: 25vw;
-  height: 50vh;
-  margin-left: auto;
-  margin-right: auto;
+  width: 32%;
+  height: 66%;
 }

@@ -8,18 +8,31 @@
     <script type="module" src="./js/card.js" defer></script>
   </head>
   <body>
-    <main class="cardHolder"></main>
-    <aside>
-      <form class="filters">
-        <input type="text" name="yearMin" id="yearMin" value="" />
-        <input type="text" name="yearMax" id="yearMax" value="" />
-        <select name="makeF" id="makeF" min="0" max="0" value=""></select>
-        <input type="range" name="milesF" id="milesF" min="0" value="0" />
-        <input type="text" name="priceMin" id="priceMin" value="" />
-        <input type="text" name="priceMax" id="priceMax" value="" />
-        <select name="colorF" id="colorF" value=""></select>
-      </form>
-      <input type="submit" value="submit" id="submit" />
-    </aside>
+    <nav><h1>Used Car's for Sale</h1></nav>
+    <div class="fullBody">
+      <aside>
+        <h2 class="filterHead">Filters</h2>
+        <div class="filterHolder">
+          <form class="filters">
+            <label for="yearMin">Year (min):</label>
+            <input type="text" name="yearMin" id="yearMin" value="" />
+            <label for="yearMax">Year (max):</label>
+            <input type="text" name="yearMax" id="yearMax" value="" />
+            <label for="makeF">Make:</label>
+            <select name="makeF" id="makeF" min="0" max="0" value=""></select>
+            <label for="milesF" id="mileLabel">Mileage: 0</label>
+            <input type="range" name="milesF" id="milesF" min="0" value="0" />
+            <label for="priceMin">Price (min):</label>
+            <input type="text" name="priceMin" id="priceMin" value="" />
+            <label for="priceMax">Price (max):</label>
+            <input type="text" name="priceMax" id="priceMax" value="" />
+            <label for="colorF">Color:</label>
+            <select name="colorF" id="colorF" value=""></select>
+          </form>
+          <input type="submit" value="Submit" id="submit" />
+        </div>
+      </aside>
+      <main class="cardHolder"></main>
+    </div>
   </body>
 </html>
